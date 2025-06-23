@@ -1,0 +1,20 @@
+<html>
+    {% load cache %}
+
+    <head>
+        <title>Template Cache Example</title>
+    </head>
+
+    <body>
+        <h1>Template Cache Example</h1>
+         {% cache 20 home %}
+        <p>This page demonstrate the use of template caching in Django.</p>
+        {% endcache home %}
+
+        {% cache (60*15) footer %}
+        <footer>
+            <p> footer content that is cached for 15 minutes.</p>
+        </footer>
+        {% endcache footer %}
+    </body>
+</html>

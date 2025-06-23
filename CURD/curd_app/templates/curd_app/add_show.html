@@ -1,0 +1,52 @@
+{% extends 'curd_app/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-4">
+        <h4 class="text-center alert alert-info"> Add New User </h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="Add User">
+        </form>
+    </div>
+
+    <div class="col-sm-7 offset-sm-1">
+        <h4 class="text-center alert alert-info"> Show All Users </h4>
+        {% if user %}
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in user %}
+                    <tr>
+                        <th scope="row">{{u.id}}</th>
+                        <td>{{u.name}}</td>
+                        <td>{{u.email}}</td>
+                        <td>{{u.password}}</td>
+                        <td>
+                            <a href="{% url 'update_user' u.id %}" class="btn btn-warning btn-sm">Edit</a>
+                            <!-- <a href="#" class="btn btn-danger btn-sm">Delete</a> -->
+                            <form action="{% url 'delete_user' u.id %}" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <h4 class="text-center alert alert-warning"> No User Found </h4>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

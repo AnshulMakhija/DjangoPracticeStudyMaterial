@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% load static %}
+        <title>CRUD Application</title>
+        <link rel="stylesheet" href="{% static 'curd_app/css/bootstrap.css' %}">
+        <script src="{% static 'curd_app/js/jquery.js' %}"></script>
+        <script src="{% static 'curd_app/js/popper.js' %}"></script>
+        <script src="{% static 'curd_app/js/bootstrap.js' %}"></script>
+    </head>
+
+    <body>
+        <div class="container mt-5">
+            <h2 class="text-center alert alert-danger"> Function based view modelform CRUD application</h2>
+            {% block content %} {% endblock content %}
+        </div>
+    </body>
+</html>

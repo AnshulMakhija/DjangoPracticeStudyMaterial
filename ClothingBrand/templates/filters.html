@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <h3>
+             {{filters | default:"Hola"}} <br>
+             {{filters | lower}} <br>
+             {{filters | upper}} <br>
+             {{filters | capfirst}} <br>
+             {{filters | length}} <br>
+             {{filters | slice:2}} <br>
+             {{filters | truncatechars:5}} <br>
+             {{filters | truncatewords:1}} <br>
+             {{filters | date }} <br>
+             {{filters | date:'D d M Y'}} <br>
+             {{filters | date:'DATE_FORMAT'}} <br>
+             {{filters | date:'DATETIME_FORMAT'}} <br>
+             {{filters | date:'TIME_FORMAT'}} <br>
+             {{filters | time:'H:i:s'}} <br>
+             {{filters | time:'H:i'}} <br>
+             {{filters | date:'SHORT_DATETIME_FORMAT'}} <br>
+             {{filters | date:'SHORT_DATE_FORMAT'}} <br>   
+             {{filters | floatformat:2 }} <br>
+             {{filters | floatformat:0 }} <br>
+             {{filters | floatformat:1 }} <br>
+             {{filters | floatformat:-3 }} <br>
+        </h3>
+
+        {% if nm == 1 %}
+            <h1> Hola finally </h1>
+        {% endif %}
+
+        {% for name in names %}
+            <h3> {{name}} <br> </h3>
+        {% endfor %}
+    </body>
+</html>

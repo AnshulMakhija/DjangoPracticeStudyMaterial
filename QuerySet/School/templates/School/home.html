@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <table border=4>
+            <tr>
+                <th>Roll No.</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Marks</th>
+                <th>Standard</th>
+            </tr>
+
+            {% for student in students %}
+            <tr>
+                <td>{{student.roll_no}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.marks}}</td>
+                <td>{{student.standard}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+

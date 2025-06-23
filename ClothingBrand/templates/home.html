@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">  <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/cat.jpg' %}" alt="Company Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Our Website</h1>
+            <p>This is a sample homepage.</p>
+            <a href="#" class="btn">Learn More</a>
+        </section>
+
+        <section class="features">
+            <h2>Our Features</h2>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+        </section>
+    </main>
+
+    <img src = "{% static 'images/cat.jpg' %}"></img>
+    <img src = "{% get_static_prefix %}images/cat.jpg"/>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

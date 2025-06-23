@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}"> Home </a> </li>
+                <li><a href="{% url 'contact' %}"> Contact </a> </li>
+                <li><a href="{% url 'about' %}"> About </a> </li>
+            </ul>
+        </nav>
+        <h3>Home Page</h3>
+        <hr>
+        {%if result.id %}
+            <p> Task Id: {{result.id}} </p>
+            <a href="{% url 'result' result.id %}"> check task </a>
+        {% endif %}
+    </body>
+</html>
